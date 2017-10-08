@@ -8,10 +8,11 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(`${__dirname}/public`));
 
+app.set('trust proxy');
+
 app.get('/whoami', (req, res) => {
-  console.log('connection', req.ip)
   res.json({
-    'ip address': req.ip,
+    'ip address': req.connection.remoteAddress || request.headers['x-forwarded-for'],
     'language': req.headers['accept-language'],
     'software': req.headers['user-agent']
   });

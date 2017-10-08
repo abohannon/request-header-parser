@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Adam's Request Header Parser</title>
+
+  <style>
+    html {
+      box-sizing: border-box;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #c7254e;
+    }
+
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:focus {
+      text-decoration: none;
+    }
+
+    code {
+      padding: 2px 4px;
+      font-size: 90%;
+      color: #c7254e;
+      background-color: #f9f2f4;
+      border-radius: 4px;
+    }
+
+    main {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    article,
+    aside {
+      flex-basis: 100%;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    @media screen and (min-width: 800px) {
+      article {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section>
+      <article>
+        <h1>Request Header Parser</h1>
+        <p>
+          Click the button below to retrieve your IP address, browser language, and information about your machine.
+        </p>
+        <a href="/whoami"><button>Who am I?</button></a>
+        <h2>Example output:</h2>
+        <code>{ ip address: "192.0.0.1", language: "en-US", software: "Macintosh; Intel Mac OS X 10_12_3" }</code>
+      </article>
+    </section>
+  </main>
+
+</body>
+
+</html>

@@ -11,10 +11,13 @@ app.use(express.static(`${__dirname}/public`));
 app.set('trust proxy');
 
 app.get('/whoami', (req, res) => {
+  const ipv4 = req.headers['x-forwarded-for'] || req.connection.remoteAddress || request.socket.remoteAddress || request.connection.socket.remoteAddress;
+  const lang = req.headers['accept-language'].split(',')[0];
+  const software = req.headers['user-agent'].split(/[\()]+/)[1];
   res.json({
-    'ip address': req.headers['x-forwarded-for'] || req.connection.remoteAddress || request.socket.remoteAddress || request.connection.socket.remoteAddress,
-    'language': req.headers['accept-language'],
-    'software': req.headers['user-agent']
+    'ip address': ipv4,
+    'language': lang,
+    'software': software
   });
 })
 

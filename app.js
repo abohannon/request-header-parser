@@ -9,9 +9,9 @@ const port = process.env.PORT || 3000;
 app.use(express.static(`${__dirname}/public`));
 
 app.get('/whoami', (req, res) => {
-  console.log(req.headers)
+  console.log('connection', req.ip)
   res.json({
-    'ip address': req.headers.host,
+    'ip address': req.ip,
     'language': req.headers['accept-language'],
     'software': req.headers['user-agent']
   });

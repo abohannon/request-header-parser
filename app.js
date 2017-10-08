@@ -12,7 +12,7 @@ app.set('trust proxy');
 
 app.get('/whoami', (req, res) => {
   res.json({
-    'ip address': req.connection.remoteAddress || request.headers['x-forwarded-for'],
+    'ip address': req.connection.remoteAddress || req.headers['x-forwarded-for'],
     'language': req.headers['accept-language'],
     'software': req.headers['user-agent']
   });
